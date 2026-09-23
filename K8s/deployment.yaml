@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: application-testing-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: application-testing-api
+  template:
+    metadata:
+      labels:
+        app: application-testing-api
+    spec:
+      containers:
+      - name: application-testing-api
+        image: pran4450/application-testing-api  # Replace with your image tag
+        ports:
+        - containerPort: 3000  # Use for local minikube images   
